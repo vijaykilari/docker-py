@@ -13,7 +13,7 @@ from ..base import requires_api_version
 class BuildTest(helpers.BaseTestCase):
     def test_build_streaming(self):
         script = io.BytesIO('\n'.join([
-            'FROM busybox',
+            'FROM aarch64/busybox',
             'MAINTAINER docker-py',
             'RUN mkdir -p /tmp/test',
             'EXPOSE 8080',
@@ -33,7 +33,7 @@ class BuildTest(helpers.BaseTestCase):
         if six.PY3:
             return
         script = io.StringIO(six.text_type('\n').join([
-            'FROM busybox',
+            'FROM aarch64/busybox',
             'MAINTAINER docker-py',
             'RUN mkdir -p /tmp/test',
             'EXPOSE 8080',
@@ -55,7 +55,7 @@ class BuildTest(helpers.BaseTestCase):
 
         with open(os.path.join(base_dir, 'Dockerfile'), 'w') as f:
             f.write("\n".join([
-                'FROM busybox',
+                'FROM aarch64/busybox',
                 'MAINTAINER docker-py',
                 'ADD . /test',
             ]))
@@ -124,7 +124,7 @@ class BuildTest(helpers.BaseTestCase):
         control_chars = ['\x1b[91m', '\x1b[0m']
         snippet = 'Ancient Temple (Mystic Oriental Dream ~ Ancient Temple)'
         script = io.BytesIO(b'\n'.join([
-            b'FROM busybox',
+            b'FROM aarch64/busybox',
             'RUN sh -c ">&2 echo \'{0}\'"'.format(snippet).encode('utf-8')
         ]))
 

@@ -25,9 +25,9 @@ class InformationTest(helpers.BaseTestCase):
 
     def test_search(self):
         self.client = helpers.docker_client(timeout=10)
-        res = self.client.search('busybox')
+        res = self.client.search('aarch64/busybox')
         self.assertTrue(len(res) >= 1)
-        base_img = [x for x in res if x['name'] == 'busybox']
+        base_img = [x for x in res if x['name'] == 'aarch64/busybox']
         self.assertEqual(len(base_img), 1)
         self.assertIn('description', base_img[0])
 

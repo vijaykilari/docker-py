@@ -11,7 +11,7 @@ import unittest
 import docker
 import six
 
-BUSYBOX = 'busybox:buildroot-2014.02'
+BUSYBOX = 'aarch64/busybox'
 EXEC_DRIVER = []
 
 

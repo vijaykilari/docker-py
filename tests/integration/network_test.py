@@ -59,7 +59,7 @@ class TestNetworks(helpers.BaseTestCase):
     def test_connect_and_disconnect_container(self):
         net_name, net_id = self.create_network()
 
-        container = self.client.create_container('busybox', 'top')
+        container = self.client.create_container('aarch64/busybox', 'top')
         self.tmp_containers.append(container)
         self.client.start(container)
 
@@ -80,7 +80,7 @@ class TestNetworks(helpers.BaseTestCase):
         net_name, net_id = self.create_network()
 
         container = self.client.create_container(
-            image='busybox',
+            image='aarch64/busybox',
             command='top',
             host_config=self.client.create_host_config(network_mode=net_name),
         )
